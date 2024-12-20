@@ -4,7 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
+
 @Entity
+@Data
 public class Employee {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -13,21 +16,6 @@ public class Employee {
     private String department;
     private double salary;
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
 
     @Override
     public String toString() {
@@ -39,19 +27,6 @@ public class Employee {
                 '}';
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+   
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 }
