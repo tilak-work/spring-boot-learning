@@ -9,13 +9,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Service
 public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
-    Logger logger= LoggerFactory.getLogger(EmployeeService.class);
+    private static final Logger logger= LoggerFactory.getLogger(EmployeeService.class);
 
     public List<Employee> getAllEmployees(){
         logger.info("All Employees are retrived from database");
